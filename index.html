@@ -11,6 +11,32 @@
     />
   </head>
   <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const animatedItems = document.querySelectorAll(
+          ".animated-item, .timeline-item"
+        );
+
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        animatedItems.forEach((item) => {
+          observer.observe(item);
+        });
+      });
+    </script>
     <audio id="background-music" autoplay loop playsinline>
       <source
         src="WhatsApp Audio 2025-07-12 at 21.50.33.mpeg"
@@ -159,5 +185,8 @@
     </footer>
 
     <script src="script.js"></script>
+    <button onclick="document.getElementById('background-music').play()">
+      Putar Musik
+    </button>
   </body>
 </html>

@@ -302,3 +302,77 @@ footer {
 }
 
 /* ... ( responsive design, footer, dan animasi love yang sudah ada ) ... */
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2em;
+    }
+  
+    .hero-content h2 {
+      font-size: 1.2em;
+    }
+  
+    .hero-content p {
+      font-size: 1em;
+      padding: 0 10px;
+    }
+  
+    .main-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .main-nav a {
+      display: block;
+      margin: 5px auto;
+      width: fit-content;
+    }
+  
+    .timeline::after {
+      left: 10px;
+    }
+  
+    .timeline-item {
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 15px;
+      margin-bottom: 40px;
+    }
+  
+    .timeline-item:nth-child(even) {
+      left: 0;
+    }
+  
+    .timeline-item::after {
+      left: 0;
+      right: auto;
+    }
+  
+    .timeline-content {
+      padding: 20px;
+    }
+  
+    .timeline-date {
+      display: none; /* Sembunyikan tanggal jika tidak dipakai */
+    }
+  
+    .message-content {
+      padding: 20px;
+    }
+  
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+    }
+  
+    .footer {
+      font-size: 0.8em;
+      padding: 20px;
+    }
+  
+    .love {
+      font-size: 1.2em;
+    }
+  }
+  
